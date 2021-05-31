@@ -8,6 +8,11 @@ const port = 3000
 
 app.use(express.static(path.join(__dirname, 'public')))
 
+app.use(express.urlencoded({
+  extended: true
+}))
+app.use(express.json())
+
 //HTTP logger
 app.use(morgan('combined'))
 
@@ -23,7 +28,16 @@ app.get('/', (req, res) => {
 })
 
 app.get('/news', (req, res) => {
+  console.log(req.query.q)
   res.render('news');
+})
+
+app.get('/search', (req, res) => {
+  res.render('search');
+})
+
+app.post('/search', (req, res) => {
+  res.send();
 })
 
 app.listen(port, () => {
