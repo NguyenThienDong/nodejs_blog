@@ -30,7 +30,11 @@
     <table class='table mt-4'>
         <thead>
             <tr>
-                <th scope='col' colspan=2>#</th>
+                <th></th>
+                <th scope='col'>
+                    ID
+                    {{{sortable '_id' _sort}}}
+                </th>
                 <th scope='col'>
                     Tên khóa học
                     {{{sortable 'name' _sort}}}
@@ -61,7 +65,8 @@
                         />
 
                     </td>
-                    <th scope='row'>{{sum @index 1}}</th>
+                    
+                    <th scope='row'>{{this._id}}</th>
                     <td>{{this.name}}</td>
                     <td>{{this.level}}</td>
                     <td>{{this.createdAt}}</td>
