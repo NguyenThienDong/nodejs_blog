@@ -4,12 +4,12 @@ const morgan = require('morgan');
 const handlebars = require('express-handlebars');
 const methodOverride = require('method-override');
 
-const SortMiddleware = require('./app/middlewares/sortMiddleware.x');
+const SortMiddleware = require('./app/middlewares/sortMiddleware');
 const route = require('./routes');
 const db = require('./config/db');
 
 const app = express();
-const port = 3000;
+const port = 4400;
 
 //Connect to DB
 db.connect();
